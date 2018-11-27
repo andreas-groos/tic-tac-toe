@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 
 const TRow = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: ${props =>
     props.justifyContent === "center"
       ? "center"
@@ -33,9 +34,8 @@ const TRow = styled.div`
       : props.alignItems === "baseline" || props.alignItems === "base"
       ? "baseline"
       : null};
-  flex-wrap: ${props => props.wrap};
-  border: 1px red solid;
   min-height: ${props => (props.fillHeight ? "100%" : null)};
+  width: 100%;
   & > div {
     display: ${props => (props.centered ? "flex" : null)};
     justify-content: ${props => (props.centered ? "center" : null)};
@@ -49,7 +49,7 @@ const TCol = styled.div`
   justify-content: ${props => (props.centered ? "center" : null)};
   align-items: ${props => (props.centered ? "center" : null)};
   flex: ${props => (props.centered ? 1 : null)};
-  border: 1px blue solid;
+  flex: ${props => (props.fillWidth ? 1 : null)};
 `;
 
 export { TRow, TCol };
