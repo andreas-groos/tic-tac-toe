@@ -1,4 +1,10 @@
 import React from "react";
-import "./styles.css";
-const MyComponent = () => <h1>Hello from My Component</h1>;
+import styled from "styled-components";
+
+const RedHeadline = styled.h1`
+  color: red;
+`;
+
+const MyComponent = () => <RedHeadline>Some Headline</RedHeadline>;
+
 export default MyComponent;
