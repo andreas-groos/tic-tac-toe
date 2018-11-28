@@ -33,22 +33,24 @@ const TRow = styled.div`
 
 const TCol = styled.div`
   box-sizing: border-box;
+  display: flex;
   flex: 0 0 auto;
   padding: ${() => `0 ${style.gutterWidth}rem`};
   flex-grow: 1;
   flex-basis: 0;
   max-width: 100%;
+
   /* TODO: make media queries use screenSizes constants... */
   /* NOTE: Media queries for width */
   @media (max-width: 48rem) {
     flex-basis: ${props => `${style.oneTwelth * props.xs}%`};
     max-width: ${props => `${style.oneTwelth * props.xs}%`};
   }
-  @media (min-width: 48rem) {
+  @media (min-width: 48rem) and (max-width: 64rem) {
     flex-basis: ${props => `${style.oneTwelth * props.sm}%`};
     max-width: ${props => `${style.oneTwelth * props.sm}%`};
   }
-  @media (min-width: 64rem) {
+  @media (min-width: 64rem) and (max-width: 75rem) {
     flex-basis: ${props => `${style.oneTwelth * props.md}%`};
     max-width: ${props => `${style.oneTwelth * props.md}%`};
   }
@@ -69,6 +71,16 @@ const TCol = styled.div`
   @media (min-width: 75rem) {
     margin-left: ${props => `${style.oneTwelth * props.offsetLg}%`};
   }
+  /* NOTE: postion props */
+  justify-content: ${props => `${props.start ? "flex-start" : null}`};
+  text-align: ${props => `${props.start ? "left" : null}`};
+  justify-content: ${props => `${props.center ? "center" : null}`};
+  text-align: ${props => `${props.center ? "center" : null}`};
+  justify-content: ${props => `${props.end ? "flex-end" : null}`};
+  text-align: ${props => `${props.end ? "right" : null}`};
+  align-items: ${props => `${props.top ? "flex-start" : null}`};
+  align-items: ${props => `${props.middle ? "center" : null}`};
+  align-items: ${props => `${props.bottom ? "flex-end" : null}`};
   background: yellow;
   height: 100px;
   border: 1px green solid;
