@@ -12,17 +12,15 @@ const App = () => (
       <h1>Tic Tac Toe</h1>
       <h3>Demo still to be implemented</h3>
       <TRow>
-        {/* <TCol xs={12} md={4} lg={2}>
+        <TCol xs={12} md={4} lg={2} offsetLg={2}>
           <p>Hello</p>
         </TCol>
-        <TCol xs={12} md={4} lg={2}>
+        <TCol xs={12} md={2} offsetMd={2} lg={2}>
           <p>Hello</p>
         </TCol>
-        <TCol xs={12} md={4} lg={2}>
+        <TCol xs={12} md={4} lg={2} offsetLg={2}>
           <p>Hello</p>
-        </TCol> */}
-        <TCol />
-        <TCol />
+        </TCol>
       </TRow>
     </TGrid>
   </div>

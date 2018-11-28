@@ -39,7 +39,8 @@ const TCol = styled.div`
   flex-basis: 0;
   max-width: 100%;
   /* TODO: make media queries use screenSizes constants... */
-  @media (max-width: 30rem) {
+  /* NOTE: Media queries for width */
+  @media (max-width: 48rem) {
     flex-basis: ${props => `${style.oneTwelth * props.xs}%`};
     max-width: ${props => `${style.oneTwelth * props.xs}%`};
   }
@@ -54,6 +55,19 @@ const TCol = styled.div`
   @media (min-width: 75rem) {
     flex-basis: ${props => `${style.oneTwelth * props.lg}%`};
     max-width: ${props => `${style.oneTwelth * props.lg}%`};
+  }
+  /* NOTE: Media queries for offset */
+  @media (max-width: 48rem) {
+    margin-left: ${props => `${style.oneTwelth * props.offsetXs}%`};
+  }
+  @media (min-width: 48rem) and (max-width: 64rem) {
+    margin-left: ${props => `${style.oneTwelth * props.offsetSm}%`};
+  }
+  @media (min-width: 64rem) and (max-width: 75rem) {
+    margin-left: ${props => `${style.oneTwelth * props.offsetMd}%`};
+  }
+  @media (min-width: 75rem) {
+    margin-left: ${props => `${style.oneTwelth * props.offsetLg}%`};
   }
   background: yellow;
   height: 100px;
