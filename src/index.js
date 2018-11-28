@@ -2,7 +2,16 @@ import React from "react";
 import styled, { css } from "styled-components";
 import * as style from "./constants";
 
-const extractNumber = str => str.match(/\d+/)[0];
+// const extractNumber = str => str.match(/\d+/)[0];
+
+// const media = Object.keys(style.screenSizes).reduce((acc, label) => {
+//   acc[label] = (...args) => css`
+//     @media (min-width: ${sizes[label]}rem) {
+//       ${css(...args)}
+//     }
+//   `;
+//   return acc;
+// }, {});
 
 const TGrid = styled.div`
   margin: ${props =>
@@ -29,8 +38,23 @@ const TCol = styled.div`
   flex-grow: 1;
   flex-basis: 0;
   max-width: 100%;
-  flex-basis: ${props => `${style.oneTwelth * props.xs}%`};
-  max-width: ${props => `${style.oneTwelth * props.xs}%`};
+  /* TODO: make media queries use screenSizes constants... */
+  @media (max-width: 30rem) {
+    flex-basis: ${props => `${style.oneTwelth * props.xs}%`};
+    max-width: ${props => `${style.oneTwelth * props.xs}%`};
+  }
+  @media (min-width: 48rem) {
+    flex-basis: ${props => `${style.oneTwelth * props.sm}%`};
+    max-width: ${props => `${style.oneTwelth * props.sm}%`};
+  }
+  @media (min-width: 64rem) {
+    flex-basis: ${props => `${style.oneTwelth * props.md}%`};
+    max-width: ${props => `${style.oneTwelth * props.md}%`};
+  }
+  @media (min-width: 75rem) {
+    flex-basis: ${props => `${style.oneTwelth * props.lg}%`};
+    max-width: ${props => `${style.oneTwelth * props.lg}%`};
+  }
   background: yellow;
   height: 100px;
   border: 1px green solid;
